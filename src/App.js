@@ -39,7 +39,9 @@ function App () {
         email: response.email,
         uid: response.kid,
         photoURL: response.picture,
-        isOnline: false
+        isOnline: false,
+        activeRoomId:'none'
+
       })
 
       var requestOptions = {
@@ -52,7 +54,7 @@ function App () {
       fetch('http://localhost:5000/add_user', requestOptions)
         .then(response => response.text())
         .then(result => {
-          localStorage.setItem('uid', response.picture)
+          localStorage.setItem('uid', response.email)
         })
         .catch(error => console.log('error', error))
     },

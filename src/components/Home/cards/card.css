@@ -128,7 +128,7 @@
   } */
 
 .card {
-  height: 25vh;
+  height: 30vh;
 
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(22, 172, 159, 0.5);
@@ -148,14 +148,14 @@
 
 .card-contant {
   width: 1113px;
-  height: 30vh;
+  height: 35vh;
 }
 .nav {
   height: 3vh;
   border: 1px solid rgba(22, 172, 159, 0.5);
 }
 .content {
-  height: 19vh;
+  height: 24vh;
   border: 1px solid rgba(22, 172, 159, 0.5);
   align-items: bottom;
   text-align: bottom;
@@ -166,22 +166,24 @@
 }
 
 .owner {
-  height: 19vh;
+  height: 24vh;
   width: 130px;
   margin-left: 3vh;
   align-items: center;
   text-align: center;
   border-right: 1px solid rgba(22, 172, 159, 0.5);
   border-left: 1px solid rgba(22, 172, 159, 0.5);
+
 }
 .owner-img {
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 
   height: 12vh;
   width: 12vh;
 }
 .memberlist {
-  margin-top: 4%;
+  margin-top: 76px;
   height: 6vh;
   width: 85.85%;
   /* align-items: center;
@@ -220,12 +222,12 @@
   left: 138px;
   top: 18px;
   float: left;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .groupName {
   float: left;
-  color: #e9fde4;
+  color: #ffffff;
   margin-right: 100px;
   /* font-family: 'georgia'; */
   /* font-weight: normal; */
@@ -237,7 +239,7 @@
   float: left;
   /* font-family: 'georgia'; */
 
-  color: #e9fde4;
+  color: #ffffff;
   /* font-size: small; */
   font-weight: lighter;
 
@@ -250,4 +252,9 @@
   background: none;
   border: none;
   margin-top: -0.5%;
+}
+.btn-Join:hover{
+  color:rgba(22, 172, 159, 0.5);
+
+  
 }

@@ -7,24 +7,26 @@ import './home.css'
 export default function Home (params) {
   const [groups, setGroups] = useState()
   useEffect(() => {
-    var myHeaders = new Headers()
-    myHeaders.append('Content-Type', 'application/json')
+    setInterval(() => {
+      var myHeaders = new Headers()
+      myHeaders.append('Content-Type', 'application/json')
 
-    var raw = JSON.stringify({ uid: localStorage.getItem('uid') })
+      var raw = JSON.stringify({ uid: localStorage.getItem('uid') })
 
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    }
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      }
 
-    fetch('http://localhost:5000/get_groups', requestOptions)
-      .then(response => response.text())
-      .then(result => {
-        setGroups(JSON.parse(result))
-      })
-      .catch(error => console.log('error', error))
+      fetch('http://localhost:5000/get_groups', requestOptions)
+        .then(response => response.text())
+        .then(result => {
+          setGroups(JSON.parse(result))
+        })
+        .catch(error => console.log('error', error))
+    }, 2000)
   })
   return (
     <div>

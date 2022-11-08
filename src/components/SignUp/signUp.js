@@ -24,7 +24,8 @@ export default function SignUp (params) {
         email: user.user.email,
         uid: user.user.uid,
         photoURL: user.user.photoURL,
-        isOnline: false
+        isOnline: false,
+        activeRoomId:'none'
       })
 
       var requestOptions = {
@@ -38,7 +39,7 @@ export default function SignUp (params) {
         .then(response => response.text())
         .then(result => {
           console.log(JSON.parse(result))
-          localStorage.setItem('uid', user.user.photoURL)
+          localStorage.setItem('uid', user.user.email)
           window.location = 'http://localhost:3000'
         })
         .catch(error => console.log('error', error))

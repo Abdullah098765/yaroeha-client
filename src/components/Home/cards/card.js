@@ -16,14 +16,23 @@ export default function Card ({ group }) {
                   src={group.ownerData.photoURL}
                 ></img>
                 <br></br>
-                <p className='text-light'>{group.ownerData.displayName}</p>
+                <p className='text-light ownername'>
+                  {group.ownerData.displayName}
+                </p>
               </div>
 
               <div className='groupcontant'>
                 <p className='groupName'>{group.groupName}</p>
                 <p className='groupName'>English </p>
-                <p className='groupDiscription'>{group.comment}</p>
-                <button className='btn btn-Join'>Join Room</button>
+                <p className='groupDiscription fw-lighter'>{group.comment}</p>
+                <button
+                  className='btn btn-Join'
+                  onClick={() =>
+                    window.open('http://localhost:3000/room:' + group._id)
+                  }
+                >
+                  Join Room
+                </button>
               </div>
               <div className='memberlist'>
                 <div className='row'>

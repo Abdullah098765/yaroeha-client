@@ -8,14 +8,36 @@ export default function Create_room (params) {
 
   let { setUser, user } = useContext(AppContext)
 
+  useEffect(() => {
+    var myHeaders = new Headers()
+    myHeaders.append('Content-Type', 'application/json')
+
+    var raw = JSON.stringify({ uid: localStorage.getItem('uid') })
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    }
+
+    fetch('http://localhost:5000/get_user', requestOptions)
+      .then(response => response.text())
+      .then(result => {
+        setUser(JSON.parse(result))
+      })
+      .catch(error => console.log('error', error))
+  }, [])
+
   function createGroup (params) {
     var myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
     let group_Data = {
       groupName,
-      groupLang,
+      groupLanguage: groupLang,
       comment: groupText,
-      ownerData: user._id
+      ownerData: user._id,
+      members: []
     }
 
     var raw = JSON.stringify(group_Data)
